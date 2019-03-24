@@ -1,8 +1,7 @@
 package com.rygelouv.networkcalldslsample
 
 import android.content.Context
-import androidx.lifecycle.Observer
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,15 +10,43 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_scrolling.*
+import com.google.android.material.appbar.AppBarLayout
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: RepoListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_scrolling)
+        setSupportActionBar(toolbar)
 
+        appBar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
+            internal var isShow = true
+            internal var scrollRange = -1
+
+            override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.totalScrollRange
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.title = getString(R.string.app_name)
+                    fab.show()
+                    adButton.visibility = View.GONE
+                    isShow = true
+                } else if (isShow) {
+                    fab.hide()
+                    adButton.visibility = View.VISIBLE
+                    collapsingToolbarLayout.setTitle(" ")//carefull there should a space between double quote otherwise it wont work
+                    isShow = false
+                }
+            }
+        })
         adapter = RepoListAdapter(this, R.layout.repo_item, ArrayList())
         repoList.adapter = adapter
 

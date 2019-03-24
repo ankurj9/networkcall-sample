@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">NetworkCallDSLSample</string>
+    <string name="app_name">Letgo Junk</string>
+    <string name="action_settings">Settings</string>
 </resources>
