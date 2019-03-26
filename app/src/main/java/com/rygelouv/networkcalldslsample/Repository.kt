@@ -12,15 +12,15 @@ import retrofit2.http.Query
 
 
 object Repository {
-    fun getRepos(query: String) = networkCall<ReposResponse, List<Repo>> {
-        client = GithubAPI.githubService.getRepos(query)
+    fun getRepos(query: String) = networkCall<ReposResponse, List<AdItem>> {
+        client = LetgoAPI.letgoService.getRepos(query)
     }
 }
 
-data class Repo(val id: Int, val name: String, val full_name: String, val description: String, val git_url:String)
+data class AdItem(val id: Int, val name: String, val full_name: String, val description: String, val git_url:String)
 
-data class ReposResponse(val items: List<Repo>): BaseApiResponse<Repo>(), DataResponse<List<Repo>> {
-    override fun retrieveData(): List<Repo> = items
+data class ReposResponse(val items: List<AdItem>): BaseApiResponse<AdItem>(), DataResponse<List<AdItem>> {
+    override fun retrieveData(): List<AdItem> = items
 }
 
 abstract class BaseApiResponse<T> {
@@ -28,7 +28,7 @@ abstract class BaseApiResponse<T> {
     var incomplete_results: Boolean = false
 }
 
-object GithubAPI {
+object LetgoAPI {
     var API_BASE_URL: String = "https://api.github.com/"
     val loggingInterceptor: HttpLoggingInterceptor
         get() {
@@ -51,9 +51,9 @@ object GithubAPI {
             .build()
 
 
-    var githubService = retrofit.create<GithubService>(GithubService::class.java)
+    var letgoService = retrofit.create<LetgoService>(LetgoService::class.java)
 
-    interface GithubService {
+    interface LetgoService {
         @GET("search/repositories")
         fun getRepos(@Query("q") query: String): Deferred<Response<ReposResponse>>
     }
