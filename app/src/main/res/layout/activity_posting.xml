@@ -5,9 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnUpload"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -94,7 +93,7 @@
                 android:layout_margin="20dp"
                 android:textColor="#a0000000"
                 android:background="@drawable/selector_button"
-                android:text="Plastic" />
+                android:text="Furniture" />
 
             <Button
                 android:id="@+id/button4"
@@ -127,6 +126,7 @@
             android:layout_margin="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Title" />
@@ -151,6 +151,7 @@
             android:layout_margin="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/priceView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Price" />
@@ -159,6 +160,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/btnPostAd"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -169,7 +171,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:letterSpacing="1.5"
+        android:letterSpacing="0.3"
         android:text="SUBMIT"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,11 +46,7 @@ class MainActivity : AppCompatActivity() {
 
                     loadingWrapper.visibility = View.GONE
                     listWrapper.visibility = View.VISIBLE
-                    it.data = listOf(AdItem(1, "", "NewsPaper", "others", "3KM Away"),
-                            AdItem(1, "", "NewsPaper", "others", "3KM Away"),
-                            AdItem(1, "", "NewsPaper", "others", "3KM Away"),
-                            AdItem(1, "", "NewsPaper", "others", "3KM Away"))
-                    adapter.replace(it.data ?: ArrayList())
+                    adapter.replace(it.data!!)
                 }
                 Resource.ERROR -> {
                     Log.d("MainActivity", "--> Error!")

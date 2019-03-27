@@ -10,11 +10,11 @@ import retrofit2.http.*
 
 
 interface LetgoService {
-    @GET("search/repositories")
+    @GET("myads.php")
     fun getAds(@Query("q") query: String): Deferred<Response<AdsResponse>>
 
     @Multipart
-    @POST("")
+    @POST("postad.php")
     fun postAd(@Part image:MultipartBody.Part,
                @Part("title") title:RequestBody,
                @Part("category") category:RequestBody,

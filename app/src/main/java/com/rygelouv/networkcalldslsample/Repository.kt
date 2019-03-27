@@ -1,6 +1,7 @@
 package com.rygelouv.networkcalldslsample
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.rygelouv.model.AdItem
 import com.rygelouv.networkcalldslsample.interfaces.LetgoService
 import com.rygelouv.networkcalldslsample.utils.ImageUtils
 import okhttp3.MediaType
@@ -21,7 +22,7 @@ object Repository {
     fun postAd(imagePath:String, title:String, category: String, price:String) = networkCall<PostingResponse, String> {
         val requestFilePath = File(imagePath)
         val requestBody = ImageUtils.getCompressedImageRequestBody(imagePath, 1024)
-        val photoBody = MultipartBody.Part.createFormData("file", requestFilePath.name, requestBody!!)
+        val photoBody = MultipartBody.Part.createFormData("image[0]", requestFilePath.name, requestBody!!)
         client = LetgoAPI.letgoService.postAd(photoBody,
                 RequestBody.create(MediaType.parse("multipart/form-data"),title),
                 RequestBody.create(MediaType.parse("multipart/form-data"),category),
@@ -29,8 +30,6 @@ object Repository {
     }
 
 }
-
-data class AdItem(val id: Int, val imageUrl: String, val title: String, val category: String, val distance:String)
 
 data class AdsResponse(val items: List<AdItem>): BaseApiResponse<AdItem>(), DataResponse<List<AdItem>> {
     override fun retrieveData(): List<AdItem> = items
@@ -48,7 +47,7 @@ abstract class BaseApiResponse<T> {
 
 
 object LetgoAPI {
-    var API_BASE_URL: String = "https://api.github.com/"
+    var API_BASE_URL: String = "http://63.35.186.67/"
     val loggingInterceptor: HttpLoggingInterceptor
         get() {
             val interceptor = HttpLoggingInterceptor()
