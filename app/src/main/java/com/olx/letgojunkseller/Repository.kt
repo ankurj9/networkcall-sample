@@ -1,9 +1,9 @@
-package com.rygelouv.networkcalldslsample
+package com.olx.letgojunkseller
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.rygelouv.model.AdItem
-import com.rygelouv.networkcalldslsample.interfaces.LetgoService
-import com.rygelouv.networkcalldslsample.utils.ImageUtils
+import com.olx.letgojunkseller.model.AdItem
+import com.olx.letgojunkseller.interfaces.LetgoService
+import com.olx.letgojunkseller.utils.ImageUtils
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import retrofit2.Retrofit

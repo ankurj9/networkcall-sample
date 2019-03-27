@@ -1,8 +1,8 @@
-package com.rygelouv.networkcalldslsample.interfaces
+package com.olx.letgojunkseller.interfaces
 
-import com.rygelouv.networkcalldslsample.AdsResponse
-import com.rygelouv.networkcalldslsample.OfferResponse
-import com.rygelouv.networkcalldslsample.PostingResponse
+import com.olx.letgojunkseller.AdsResponse
+import com.olx.letgojunkseller.OfferResponse
+import com.olx.letgojunkseller.PostingResponse
 import kotlinx.coroutines.Deferred
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

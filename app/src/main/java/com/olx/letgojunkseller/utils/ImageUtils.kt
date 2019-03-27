@@ -1,4 +1,4 @@
-package com.rygelouv.networkcalldslsample.utils
+package com.olx.letgojunkseller.utils
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

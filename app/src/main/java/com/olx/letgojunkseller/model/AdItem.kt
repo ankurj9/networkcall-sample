@@ -1,4 +1,4 @@
-package com.rygelouv.model
+package com.olx.letgojunkseller.model
 
 import java.io.Serializable
 

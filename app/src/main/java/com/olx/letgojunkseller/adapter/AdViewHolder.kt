@@ -1,12 +1,12 @@
-package com.rygelouv.networkcalldslsample.adapter
+package com.olx.letgojunkseller.adapter
 
 import android.content.Intent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.rygelouv.model.AdItem
-import com.rygelouv.model.MyOffersActivity
+import com.olx.letgojunkseller.model.AdItem
+import com.olx.letgojunkseller.model.MyOffersActivity
 import kotlinx.android.synthetic.main.repo_item.view.*
 
 class AdViewHolder(view: View) : RecyclerView.ViewHolder(view) {

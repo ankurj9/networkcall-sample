@@ -1,9 +1,9 @@
-package com.rygelouv.networkcalldslsample.adapter
+package com.olx.letgojunkseller.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.rygelouv.model.Offer
-import com.rygelouv.networkcalldslsample.interfaces.OfferClickListener
+import com.olx.letgojunkseller.model.Offer
+import com.olx.letgojunkseller.interfaces.OfferClickListener
 import kotlinx.android.synthetic.main.item_offer.view.*
 
 class OfferViewHolder(view: View,val offerClickListener: OfferClickListener) : RecyclerView.ViewHolder(view) {

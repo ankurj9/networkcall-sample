@@ -1,4 +1,4 @@
-package com.rygelouv.networkcalldslsample
+package com.olx.letgojunkseller
 
 
 import okhttp3.Response

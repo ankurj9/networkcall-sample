@@ -1,10 +1,10 @@
-package com.rygelouv.networkcalldslsample.adapter
+package com.olx.letgojunkseller.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.rygelouv.model.AdItem
-import com.rygelouv.networkcalldslsample.R
+import com.olx.letgojunkseller.model.AdItem
+import com.olx.letgojunkseller.R
 
 open class AdListAdapter(var list: ArrayList<AdItem>) : RecyclerView.Adapter<AdViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdViewHolder {

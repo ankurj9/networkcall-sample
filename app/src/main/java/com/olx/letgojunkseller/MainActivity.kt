@@ -1,4 +1,4 @@
-package com.rygelouv.networkcalldslsample
+package com.olx.letgojunkseller
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_scrolling.*
 import com.google.android.material.appbar.AppBarLayout
-import com.rygelouv.networkcalldslsample.adapter.AdListAdapter
+import com.olx.letgojunkseller.adapter.AdListAdapter
 
 
 class MainActivity : AppCompatActivity() {

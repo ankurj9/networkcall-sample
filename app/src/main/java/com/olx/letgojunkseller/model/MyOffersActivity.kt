@@ -1,4 +1,4 @@
-package com.rygelouv.model
+package com.olx.letgojunkseller.model
 
 import android.os.Bundle
 import android.view.View
@@ -9,11 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.rygelouv.networkcalldslsample.R
-import com.rygelouv.networkcalldslsample.Repository
-import com.rygelouv.networkcalldslsample.Resource
-import com.rygelouv.networkcalldslsample.adapter.OfferListAdapter
-import com.rygelouv.networkcalldslsample.interfaces.OfferClickListener
+import com.olx.letgojunkseller.R
+import com.olx.letgojunkseller.Repository
+import com.olx.letgojunkseller.Resource
+import com.olx.letgojunkseller.adapter.OfferListAdapter
+import com.olx.letgojunkseller.interfaces.OfferClickListener
 import kotlinx.android.synthetic.main.activity_offer.*
 import kotlinx.android.synthetic.main.repo_item.*
 

@@ -1,4 +1,4 @@
-package com.rygelouv.networkcalldslsample
+package com.olx.letgojunkseller
 
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.*

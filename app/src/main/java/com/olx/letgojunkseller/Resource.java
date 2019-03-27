@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rygelouv.networkcalldslsample;
+package com.olx.letgojunkseller;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;

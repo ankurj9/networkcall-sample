@@ -1,4 +1,4 @@
-package com.rygelouv.networkcalldslsample
+package com.olx.letgojunkseller
 
 import android.net.Uri
 import android.os.Bundle

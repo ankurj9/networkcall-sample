@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.rygelouv.networkcalldslsample">
+    package="com.olx.letgojunkseller">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -23,7 +23,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <activity
-            android:name=".MainActivity"
+            android:name="com.olx.letgojunkseller.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -32,9 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PostingActivity"
+        <activity android:name="com.olx.letgojunkseller.PostingActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name="com.rygelouv.model.MyOffersActivity"
+        <activity android:name="com.olx.letgojunkseller.model.MyOffersActivity"
             android:theme="@style/AppTheme"/>
     </application>
 

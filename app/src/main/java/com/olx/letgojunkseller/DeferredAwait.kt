@@ -1,4 +1,4 @@
-package com.rygelouv.networkcalldslsample
+package com.olx.letgojunkseller
 
 import kotlinx.coroutines.*
 import retrofit2.HttpException

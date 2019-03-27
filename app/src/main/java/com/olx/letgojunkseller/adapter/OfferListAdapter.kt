@@ -1,11 +1,11 @@
-package com.rygelouv.networkcalldslsample.adapter
+package com.olx.letgojunkseller.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.rygelouv.model.Offer
-import com.rygelouv.networkcalldslsample.R
-import com.rygelouv.networkcalldslsample.interfaces.OfferClickListener
+import com.olx.letgojunkseller.model.Offer
+import com.olx.letgojunkseller.R
+import com.olx.letgojunkseller.interfaces.OfferClickListener
 
 open class OfferListAdapter(var list: ArrayList<Offer>, val offerClickListener: OfferClickListener) : RecyclerView.Adapter<OfferViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferViewHolder {
