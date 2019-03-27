@@ -39,6 +39,6 @@ class CallHandler<RESPONSE : Any, DATA: Any> {
 fun <RESPONSE: DataResponse<*>, DATA: Any> networkCall(block: CallHandler<RESPONSE, DATA>.() -> Unit): MutableLiveData<Resource<DATA>>
     = CallHandler<RESPONSE, DATA>().apply(block).makeCall()
 
-    interface DataResponse<T> {
+    interface   DataResponse<T> {
     fun retrieveData(): T
 }

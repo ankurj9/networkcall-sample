@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getRepo() {
-        Repository.getRepos("kotlin").observe(this, Observer {
+        Repository.getAds("kotlin").observe(this, Observer {
             when (it?.status) {
                 Resource.LOADING -> {
                     Log.d("MainActivity", "--> Loading...")
