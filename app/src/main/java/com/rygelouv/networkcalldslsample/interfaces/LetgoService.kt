@@ -1,6 +1,7 @@
 package com.rygelouv.networkcalldslsample.interfaces
 
 import com.rygelouv.networkcalldslsample.AdsResponse
+import com.rygelouv.networkcalldslsample.OfferResponse
 import com.rygelouv.networkcalldslsample.PostingResponse
 import kotlinx.coroutines.Deferred
 import okhttp3.MultipartBody
@@ -19,4 +20,7 @@ interface LetgoService {
                @Part("title") title:RequestBody,
                @Part("category") category:RequestBody,
                @Part("price") price:RequestBody): Deferred<Response<PostingResponse>>
+
+    @GET("accept_offer.php")
+    fun respondToOffer(@Query("id") id:String, @Query("status")status:String) : Deferred<Response<OfferResponse>>
 }

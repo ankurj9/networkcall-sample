@@ -19,23 +19,31 @@ object Repository {
         client = LetgoAPI.letgoService.getAds(query)
     }
 
-    fun postAd(imagePath:String, title:String, category: String, price:String) = networkCall<PostingResponse, String> {
+    fun postAd(imagePath: String, title: String, category: String, price: String) = networkCall<PostingResponse, String> {
         val requestFilePath = File(imagePath)
         val requestBody = ImageUtils.getCompressedImageRequestBody(imagePath, 1024)
         val photoBody = MultipartBody.Part.createFormData("image[0]", requestFilePath.name, requestBody!!)
         client = LetgoAPI.letgoService.postAd(photoBody,
-                RequestBody.create(MediaType.parse("multipart/form-data"),title),
-                RequestBody.create(MediaType.parse("multipart/form-data"),category),
-                RequestBody.create(MediaType.parse("multipart/form-data"),price))
+                RequestBody.create(MediaType.parse("multipart/form-data"), title),
+                RequestBody.create(MediaType.parse("multipart/form-data"), category),
+                RequestBody.create(MediaType.parse("multipart/form-data"), price))
+    }
+
+    fun respondToOffer(id: String, status: String) = networkCall<OfferResponse, String> {
+        client = LetgoAPI.letgoService.respondToOffer(id, status)
     }
 
 }
 
-data class AdsResponse(val items: List<AdItem>): BaseApiResponse<AdItem>(), DataResponse<List<AdItem>> {
+data class AdsResponse(val items: List<AdItem>) : BaseApiResponse<AdItem>(), DataResponse<List<AdItem>> {
     override fun retrieveData(): List<AdItem> = items
 }
 
-data class PostingResponse(val status:String): BaseApiResponse<String>(), DataResponse<String> {
+data class PostingResponse(val status: String) : BaseApiResponse<String>(), DataResponse<String> {
+    override fun retrieveData(): String = status
+}
+
+data class OfferResponse(val status: String) : BaseApiResponse<String>(), DataResponse<String> {
     override fun retrieveData(): String = status
 }
 
@@ -43,7 +51,6 @@ abstract class BaseApiResponse<T> {
     var total_count: Int = 0
     var incomplete_results: Boolean = false
 }
-
 
 
 object LetgoAPI {
