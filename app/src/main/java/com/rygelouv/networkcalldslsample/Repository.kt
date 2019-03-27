@@ -17,7 +17,7 @@ object Repository {
     }
 }
 
-data class AdItem(val id: Int, val name: String, val full_name: String, val description: String, val git_url:String)
+data class AdItem(val id: Int, val imageUrl: String, val title: String, val category: String, val distance:String)
 
 data class ReposResponse(val items: List<AdItem>): BaseApiResponse<AdItem>(), DataResponse<List<AdItem>> {
     override fun retrieveData(): List<AdItem> = items

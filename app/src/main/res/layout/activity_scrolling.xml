@@ -54,6 +54,8 @@
         app:layout_anchor="@id/scrollView"
         app:layout_anchorGravity="center_horizontal|bottom"
         android:layout_marginBottom="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:foregroundGravity="center"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_edit" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

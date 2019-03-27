@@ -7,6 +7,9 @@ import kotlinx.android.synthetic.main.repo_item.view.*
 
 class AdViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bindView(item: AdItem) {
-        itemView.repoName.text = "${item.full_name} -> ${item.git_url}"
+        itemView.adTitle.text = item.title
+        itemView.categoryName.text = item.category
+        itemView.distanceText.text = item.distance
+
     }
 }
